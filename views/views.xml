@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="desgrane_oferta.list">
+      <field name="name">desgrane_oferta list</field>
+      <field name="model">desgrane_oferta.desgrane_oferta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="desgrane_oferta.action_window">
+      <field name="name">desgrane_oferta window</field>
+      <field name="res_model">desgrane_oferta.desgrane_oferta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="desgrane_oferta.action_server">
+      <field name="name">desgrane_oferta server</field>
+      <field name="model_id" ref="model_desgrane_oferta_desgrane_oferta"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="desgrane_oferta" id="desgrane_oferta.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="desgrane_oferta.menu_1" parent="desgrane_oferta.menu_root"/>
+    <menuitem name="Menu 2" id="desgrane_oferta.menu_2" parent="desgrane_oferta.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="desgrane_oferta.menu_1_list" parent="desgrane_oferta.menu_1"
+              action="desgrane_oferta.action_window"/>
+    <menuitem name="Server to list" id="desgrane_oferta" parent="desgrane_oferta.menu_2"
+              action="desgrane_oferta.action_server"/>
+    -->
+  </data>
+</odoo>
