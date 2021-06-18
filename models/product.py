@@ -3,9 +3,9 @@ from odoo import models, fields, api, _
 
 
 class productproduct(models.Model):
-    _inherit = 'product.template'
+    _inherit = 'product.product'
 
-    @api.onchange('hs_code')
+    @api.multi
     def iterate_combo_prod(self):
         for record in self:
             if record.is_combo:
