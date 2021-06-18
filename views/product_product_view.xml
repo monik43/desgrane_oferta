@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="prudct_normal_form_view_add_test_btn" model="ir.ui.view">
+            <field name="name">cloudalia_product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="iterate_combo_prod" type="object"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
