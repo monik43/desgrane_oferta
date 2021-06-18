@@ -11,5 +11,5 @@ class productproduct(models.Model):
             if record.is_combo:
                 for product in record.combo_product_id:
                     print(product.product_id, "/"*25)
-                    print(product.quantity, "/"*25)
+                    print(product.product_quantity, "/"*25)
                     print("                        ")
