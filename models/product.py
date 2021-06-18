@@ -3,7 +3,7 @@ from odoo import models, fields, api, _
 
 
 class productproduct(models.Model):
-    _inherit = 'product.product'
+    _inherit = 'product.template'
 
     @api.multi
     def iterate_combo_prod(self):
