@@ -8,5 +8,5 @@ class stockpicking(models.Model):
     @api.multi
     def aaaa_check_combo(self):
         for product in self.move_lines:
-            if product.is_combo:
-                print(product)
+            #if product.is_combo:
+            print(product)
