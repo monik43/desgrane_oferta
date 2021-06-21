@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_order_form_combo_check" model="ir.ui.view">
-        <field name="name">sale.order.form.combo/field>
+    <data>
+        <record id="view_order_form_combo_check" model="ir.ui.view">
+            <field name="name">sale.order.form.combo</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="	sale.view_order_form"/>
             <field name="arch" type="xml">
@@ -9,6 +10,6 @@
                     <button name="check_combo" string="imprimir combo prodiucts" type="object"/>
                 </xpath>
             </field>
-        </field>
-    </record>
+        </record>
+    </data>
 </odoo>
