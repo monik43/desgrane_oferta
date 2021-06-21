@@ -7,7 +7,6 @@ class saleorder(models.Model):
 
     @api.multi
     def check_combo(self):
-
         for record in self:
             product = record.env['product.product'].search([('id', '=', record.order_line.id)])
             if product.is_combo:
