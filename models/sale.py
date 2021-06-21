@@ -8,6 +8,6 @@ class saleorder(models.Model):
     @api.multi
     def aaaa_check_combo(self):
         for product in self.order_line:
-            print(self.product)
-            print(self.product.id)
+            print(product)
+            print(product.id)
             print("-------------")
