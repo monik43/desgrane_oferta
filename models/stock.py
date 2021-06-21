@@ -13,3 +13,4 @@ class stockpicking(models.Model):
                     print(pro.product_id)
                     print(pro.product_id.id)
                     print(pro.product_id.name)
+                    self.write({'move_lines': [pro.product_id.id]})
