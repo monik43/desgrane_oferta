@@ -9,7 +9,7 @@ class stockpicking(models.Model):
     def aaaa_check_combo(self):
         for product in self.move_lines:
             if product.product_id.is_combo & product.product_id.name.find("OFERTA") != -1:
-                for pro in product.product_id.combo_product_id.product_id:
-                    print(pro)
-                    print(pro.id)
-                    print(pro.name)
+                for pro in product.product_id.combo_product_id:
+                    print(pro.product_id)
+                    print(pro.product_id.id)
+                    print(pro.product_id.name)
