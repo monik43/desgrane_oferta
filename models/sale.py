@@ -6,6 +6,6 @@ class saleorder(models.Model):
     _inherit = 'sale.order'
 
     @api.multi
-    def _a_check_combo(self):
+    def a_check_combo(self):
         for product in self.order_line:
             print(self.order_line)

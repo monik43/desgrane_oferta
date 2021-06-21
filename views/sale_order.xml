@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//header" position="inside">
-                    <button name="_a_check_combo" string="imprimir combo products" type="object"/>
+                    <button name="a_check_combo" string="imprimir  combo products" type="object"/>
                 </xpath>
             </field>
         </record>
