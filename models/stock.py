@@ -8,8 +8,7 @@ class stockpicking(models.Model):
     @api.multi
     def aaaa_check_combo(self):
         for product in self.move_lines:
-            print(product.product_id.name)
-            if product.product_id.is_combo & product.product_id.name.find("OFERTA") != -1:
+            if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                 for pro in product.product_id.combo_product_id:
                     print(pro.product_id)
                     print(pro.product_id.id)
