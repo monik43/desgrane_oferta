@@ -10,8 +10,8 @@ class stockpicking(models.Model):
         for product in self.move_lines:
             if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                 for pro in product.product_id.combo_product_id:
-                    print(pro.product_id)
                     print(pro.product_id.id)
+                    print(self.env["product.product"].browse(pro.product_id.id).id)
                     print(pro.product_id.name)
                     print(self.env["product.product"].browse(pro.product_id.id).name)
                     """parte_combo = self.enf["product.template"].browse(pro.product_id.id)
