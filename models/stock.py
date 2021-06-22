@@ -14,5 +14,4 @@ class stockpicking(models.Model):
                     print(pro.product_id.id)
                     print(pro.product_id.name)
                     self.write({'move_lines': [(4, pro.product_id.id)]})
-                    self.write({'move_lines': [(1, pro.product_id.id, {'product_uom_qty': pro.product_quantity, 'state':product.state, 'quantity_done': 0})]})
-                    ##falta hecho, sigue estando en 32 en el caso de chromebooks
+                    self.write({'move_lines': [(1, pro.product_id.id, {'product_uom_qty': pro.product_quantity, 'state':product.state, 'quantity_done': pro.product_quantity})]})
