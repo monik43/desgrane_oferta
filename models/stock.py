@@ -12,7 +12,7 @@ class stockpicking(models.Model):
                 for pro in product.product_id.combo_product_id:
                     print(pro.product_id.id)
                     print(pro.product_id.name)
-                    print(pro.product_id.product_quantity)
+                    print(pro.product_quantity)
                     print(product.product_uom_qty)
                     print(pro.product_id.product_quantity*product.product_uom_qty)
                     #'product_uom_qty':pro.product_id.product_quantity * product.product_uom_qty,
