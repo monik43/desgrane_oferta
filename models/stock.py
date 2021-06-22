@@ -15,5 +15,5 @@ class stockpicking(models.Model):
                     print(pro.product_id.name)
                     print(self.env["product.product"].browse(pro.product_id.id).name)
                     parte_combo = self.env["product.template"].browse(pro.product_id.id)
-                    self.write({'move_lines': [(4, parte_combo.id)]})
-                    self.write({'move_lines': [(1, parte_combo.id, {'product_uom_qty': pro.product_quantity, 'state':product.state})]})
+                    self.write({'move_lines': [(6, 0 ,[parte_combo.id])]})
+                    #self.write({'move_lines': [(1, parte_combo.id, {'product_uom_qty': pro.product_quantity, 'state':product.state})]})
