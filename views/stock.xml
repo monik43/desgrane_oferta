@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//header" position="inside">
-                    <button name="aaaa_check_combo" string="test but a 1" type="object"/>
+                    <button name="desglose_oferta" string="Desglose de productos oferta" type="object"/>
                 </xpath>
             </field>
         </record>

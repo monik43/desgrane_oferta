@@ -5,8 +5,8 @@ from odoo import models, fields, api, _
 class stockpicking(models.Model):
     _inherit = 'stock.picking'
 
-    @api.onchange('move_lines')
-    def aaaa_check_combo(self):
+    @api.multi
+    def desglose_oferta(self):
         for product in self.move_lines:
             if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                 for pro in product.product_id.combo_product_id:
