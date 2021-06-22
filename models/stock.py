@@ -16,5 +16,5 @@ class stockpicking(models.Model):
                 for pro in product.product_id.combo_product_id:
                     print(pro.product_id.id)
                     print(pro.product_id.name)
-                    self.write({'move_lines': [(4,pro.product_id.id)]})
-                    self.write({'move_lines': [(1, pro.product_id.id, {'product_uom_qty': pro.product_quantity, 'state':product.state})]})
+                    """self.write({'move_lines': [(4,pro.product_id.id)]})
+                    self.write({'move_lines': [(1, pro.product_id.id, {'product_uom_qty': pro.product_quantity, 'state':product.state})]})"""
