@@ -9,9 +9,11 @@ class stockpicking(models.Model):
 
     @api.multi
     def print_all(self):
-        for field in self.read():
-            print(field)
-            print("//"*50)
+        for dictfield in self.read():
+            for field in dictfield:
+                print(field)
+                print("//"*50)
+            
 
     def _get_combo_prod(self):
         for record in self:
