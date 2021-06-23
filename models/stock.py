@@ -7,6 +7,12 @@ class stockpicking(models.Model):
 
     there_are_combo_prod = fields.Boolean(compute='_get_combo_prod')
 
+    @api.multi
+    def print_all(self):
+        for field in self:
+            print(field)
+            print("//"*50)
+
     def _get_combo_prod(self):
         for record in self:
             record.there_are_combo_prod = False
