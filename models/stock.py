@@ -11,8 +11,8 @@ class stockpicking(models.Model):
     def print_all(self):
         for dictfield in self.read():
             for field in dictfield:
-                print(field)
-                print("//"*50)
+                print(field, "      ", dictfield[field] )
+                print("//"*10)
             
 
     def _get_combo_prod(self):
