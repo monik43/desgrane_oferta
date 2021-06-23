@@ -5,6 +5,15 @@ from odoo import models, fields, api, _
 class stockpicking(models.Model):
     _inherit = 'stock.picking'
 
+    there_are_combo_prod = fields.Boolean(compute='_get_combo_prod')
+
+    def _get_combo_prod(self):
+        there_are_combo_prod = False
+
+        for product in self.move_lines:
+            if product.product_id.is_combo == -1:
+                there_are_combo_prod = True
+
     @api.multi
     def desglo_ofer(self):
         ids_oferta = []
