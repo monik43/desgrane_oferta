@@ -11,7 +11,7 @@ class stockpicking(models.Model):
         for record in self:
             record.there_are_combo_prod = False
             for product in record.move_lines:
-                if product.product_id.is_combo == -1:
+                if product.product_id.is_combo:
                     record.there_are_combo_prod = True
         
 
