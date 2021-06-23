@@ -9,7 +9,7 @@ class stockpicking(models.Model):
 
     @api.multi
     def print_all(self):
-        for field in self.fields:
+        for field in self.read():
             print(field)
             print("//"*50)
 
