@@ -1,28 +1,19 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "desgrane_oferta",
+    'name': "Desgrane oferta",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Desgrane oferta para productos combo""",
 
     'description': """
-        Long description of module's purpose
+        El módulo desgrana los productos que contienen los productos que son combo (is_combo, boolean)
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
-    # for the full list
+    'author': "Cloudalia Educacion",
+    'website': "http://https://cloudaliaeducacion.com/",
     'category': 'Uncategorized',
     'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base','stock'],
-
-    # always loaded
+    'depends': ['base', 'stock'],
     'data': [
         'views/stock.xml',
     ],
