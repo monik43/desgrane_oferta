@@ -29,7 +29,7 @@ class stockpicking(models.Model):
                         print(pro.product_id)
                         print("//"*50)
                         if pro.product_id.type != "service":
-                            record.move_lines = [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id, 'product_uom_qty': pro.product_quantity * product.product_uom_qty,
+                            record.move_lines = [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id, 'product_uom_qty': 1 * product.product_uom_qty,
                                                 'company_id': pro.product_id.company_id, 'date': record.date, 'date_expected': record.scheduled_date, 'location_id': record.location_id, 'location_dest_id': record.location_dest_id, 'tracking': pro.product_id.tracking})]
                 print(product)
                 print("2"*50)
