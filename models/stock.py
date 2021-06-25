@@ -13,7 +13,6 @@ class stockpicking(models.Model):
             for product in record.move_lines:
                 if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                     record.there_are_combo_prod = True
-        
 
     @api.multi
     def desglo_ofer(self):
@@ -26,11 +25,11 @@ class stockpicking(models.Model):
                 if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                     ids_oferta.append(product.id)
                     for pro in product.product_id.combo_product_id:
-                        print(pro.product_id)
-                        print("//"*50)
                         if pro.product_id.type != "service":
-                            record.move_lines = [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id, 'product_uom_qty': 1 * product.product_uom_qty,
-                                                'company_id': pro.product_id.company_id, 'date': record.date, 'date_expected': record.scheduled_date, 'location_id': record.location_id, 'location_dest_id': record.location_dest_id, 'tracking': pro.product_id.tracking})]
+                            print(pro.product_id)
+                            print("//"*50)
+                            record.write(
+                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id})]})
                 print(product)
                 print("2"*50)
         for id in ids_oferta:
