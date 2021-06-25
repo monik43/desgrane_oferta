@@ -29,7 +29,7 @@ class stockpicking(models.Model):
                             print(pro.product_id)
                             print("//"*50)
                             record.write(
-                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id})]})
+                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.roduct_id.name})]})
                 print(product)
                 print("2"*50)
         for id in ids_oferta:
