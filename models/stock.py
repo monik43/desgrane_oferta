@@ -6,15 +6,7 @@ class stockpicking(models.Model):
     _inherit = 'stock.picking'
 
     there_are_combo_prod = fields.Boolean(compute='_get_combo_prod')
-
-    @api.multi
-    def print_all(self):
-        for dictfield in self.read():
-            for field in dictfield:
-                print(field, "      ", dictfield[field] )
-                print("//"*10)
-            
-
+    
     def _get_combo_prod(self):
         for record in self:
             record.there_are_combo_prod = False
