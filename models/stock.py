@@ -23,6 +23,8 @@ class stockpicking(models.Model):
     @api.multi
     def desglo_ofer(self):
         for record in self:
+            if self.sale_id.warehouse_id != 1:
+                self.sale_id.warehouse_id == 1
             sale = record.sale_id
             ids_oferta = []
             for product in record.move_lines:
@@ -42,5 +44,4 @@ class stockpicking(models.Model):
 
         self.sale_id = sale
 
-        if self.sale_id.warehouse_id != 1:
-            self.sale_id.warehouse_id == 1
+
