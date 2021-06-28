@@ -9,11 +9,9 @@ class stockpicking(models.Model):
 
     @api.multi
     def print_move_line_test(self):
-        for record in self:
-            print(record.sale_id.name)
-            print(record.sale_id.warehouse_id)
         print(self.sale_id.name)
         print(self.sale_id.warehouse_id)
+        print(self.state)
 
     def _get_combo_prod(self):
         for record in self:
@@ -36,9 +34,13 @@ class stockpicking(models.Model):
                                 {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id': product.location_id.id, 'location_dest_id': product.location_dest_id.id, 'product_uom_qty': pro.product_quantity * product.product_uom_qty})]})
 
         self.state = "confirmed"
+        print(self.state)
         self.group_id = self.env['procurement.group'].search(
             [('name', '=', self.sale_id.name)])
         for id in ids_oferta:
             self.move_lines = [(3, id)]
 
         self.sale_id = sale
+
+        if self.sale_id.warehouse_id != 1:
+            self.sale_id.warehouse_id == 1
