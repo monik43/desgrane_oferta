@@ -10,8 +10,8 @@ class stockpicking(models.Model):
     @api.multi
     def print_move_line_test(self):
         for record in self:
-            print(record.move_line_ids)
-            for movelines in record.move_line_ids:
+            print(record.move_lines)
+            for movelines in record.move_lines:
                 fields_dict = {}
                 for key in movelines.fields_get():
                     fields_dict[key] = movelines[key]
