@@ -14,6 +14,13 @@ class stockpicking(models.Model):
                 if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                     record.there_are_combo_prod = True
 
+    @api.onchange('move_lines')
+    def recheck_so(self):
+        for record in self:
+            if record.sale_id == False:
+                print(record.env['sale.order'].search([('name', '=', record.origin)]).id)
+                
+
     @api.multi
     def desglo_ofer(self):
         for record in self:
