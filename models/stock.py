@@ -37,11 +37,8 @@ class stockpicking(models.Model):
                     ids_oferta.append(product.id)
                     for pro in product.product_id.combo_product_id:
                         if pro.product_id.type != "service":
-                            loc = product.location_id.id
-                            print(loc)
-                            print("//"*50)
                             record.write(
-                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id': loc, 'location_dest_id': product.location_dest_id.id})]})
+                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id': product.location_id.id, 'location_dest_id': product.location_dest_id.id, 'product_uom_qty': pro.product_quantity * product.product_uom_qty})]})
                 print(product)
                 print("2"*50)
         for id in ids_oferta:
