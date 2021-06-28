@@ -28,7 +28,8 @@ class stockpicking(models.Model):
                     for pro in product.product_id.combo_product_id:
                         if pro.product_id.type != "service":
                             record.write(
-                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id': product.location_id.id, 'location_dest_id': product.location_dest_id.id, 'product_uom_qty': pro.product_quantity * product.product_uom_qty, 'picking_type_id': ptid})]})
+                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id': product.location_id.id,
+                                 'location_dest_id': product.location_dest_id.id, 'product_uom_qty': pro.product_quantity * product.product_uom_qty, 'picking_type_id': ptid})]})
         self.group_id = self.env['procurement.group'].search(
             [('name', '=', self.sale_id.name)]).id
         for id in ids_oferta:
