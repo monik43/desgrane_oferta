@@ -17,11 +17,10 @@ class stockpicking(models.Model):
     @api.multi
     def desglo_ofer(self):
         for record in self:
+            ids_oferta = []
+            sale = record.sale_id
             if self.sale_id.warehouse_id != 1:
                 self.sale_id.warehouse_id == 1
-
-            sale = record.sale_id
-            ids_oferta = []
             for product in record.move_lines:
                 if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
                     ptid = product.picking_type_id.id
@@ -30,11 +29,9 @@ class stockpicking(models.Model):
                         if pro.product_id.type != "service":
                             record.write(
                                 {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id': product.location_id.id, 'location_dest_id': product.location_dest_id.id, 'product_uom_qty': pro.product_quantity * product.product_uom_qty, 'picking_type_id': ptid})]})
-
         self.group_id = self.env['procurement.group'].search(
-            [('name', '=', self.sale_id.name)])
+            [('name', '=', self.sale_id.name)]).id
         for id in ids_oferta:
             self.move_lines = [(3, id)]
-
         self.sale_id = sale
         self.state = "confirmed"
