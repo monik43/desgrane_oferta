@@ -9,6 +9,7 @@
                 <xpath expr="//header" position="inside">
                     <field name="there_are_combo_prod" invisible="1"/>
                     <button name="desglo_ofer" string="Desglose de productos oferta" class="oe_highlight" attrs="{'invisible':[('there_are_combo_prod', '==', False)]}" type="object"/>
+                    <button name="print_move_line" string="Print" class="oe_highlight" type="object"/>
                 </xpath>
             </field>
         </record>
