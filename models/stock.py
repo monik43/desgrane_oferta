@@ -7,12 +7,6 @@ class stockpicking(models.Model):
 
     there_are_combo_prod = fields.Boolean(compute='_get_combo_prod')
 
-    @api.multi
-    def print_move_line_test(self):
-        print(self.sale_id.name)
-        print(self.sale_id.warehouse_id)
-        print(self.state)
-
     def _get_combo_prod(self):
         for record in self:
             record.there_are_combo_prod = False
