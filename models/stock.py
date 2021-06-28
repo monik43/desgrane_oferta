@@ -15,7 +15,8 @@ class stockpicking(models.Model):
                 fields_dict = {}
                 for key in movelines.fields_get():
                     fields_dict[key] = movelines[key]
-            print(fields_dict)
+            for key in fields_dict:
+                print(key, '  ', fields_dict[key])
 
     def _get_combo_prod(self):
         for record in self:
