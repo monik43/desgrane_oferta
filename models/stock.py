@@ -28,8 +28,8 @@ class stockpicking(models.Model):
                         if pro.product_id.type != "service":
                             
                             print("//"*50)
-                            record.write(
-                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id' : product.location_id.id, 'location_dest_id' : product.location_dest_id.id, 'lot_id' : 'Test'})]})
+                            record.create(
+                                {'move_lines': [(0, 0, {'product_id': pro.product_id.id, 'name': pro.product_id.name, 'product_uom': pro.product_id.uom_id.id, 'location_id' : product.location_id.id, 'location_dest_id' : product.location_dest_id.id})]})
                 print(product)
                 print("2"*50)
         for id in ids_oferta:
