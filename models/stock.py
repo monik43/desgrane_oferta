@@ -30,8 +30,8 @@ class stockpicking(models.Model):
                 self.sale_id.warehouse_id == 1
             for product in record.move_lines:
                 if product.product_id.is_combo and product.product_id.name.find("OFERTA") != -1:
-                    gid = product.group_id
-                    print(gid, ' ', product.group_id)
+                    gid = product.group_id.id
+                    print(gid, ' ', product.group_id.id)
                     ptid = product.picking_type_id.id
                     ids_oferta.append(product.id)
                     for pro in product.product_id.combo_product_id:
